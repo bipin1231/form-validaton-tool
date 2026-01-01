@@ -1,18 +1,18 @@
 
 type SignUpFormData = {
-  name: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-  age: number;
+  name: string,
+  email: string,
+  password: string,
+  confirmPassword: string,
+  age: number
 };
 
 type FormErrors = {
-  name?: string;
-  email?: string;
-  password?: string;
-  confirmPassword?: string;
-  age?: string;
+  name?: string,
+  email?: string,
+  password?: string,
+  confirmPassword?: string,
+  age?: string
 };
 
 const form = document.getElementById("signupForm") as HTMLFormElement;
@@ -65,7 +65,7 @@ if (!(eyeOpenConfirmElement instanceof SVGElement)) throw new Error("eyeOpenConf
 
 const eyeOpenConfirm = eyeOpenConfirmElement;
 
-const eyeClosedConfirmElement = document.getElementById("eyeClosedConfirm");
+const eyeClosedConfirmElement = document.getElementById("eyeClosedConfirm")
 if (!(eyeClosedConfirmElement instanceof SVGElement)) throw new Error("eyeClosedConfirm not found");
 
 const eyeClosedConfirm = eyeClosedConfirmElement;
@@ -75,12 +75,71 @@ setupPasswordToggle(passwordInput, togglePasswordBtn, eyeOpen, eyeClosed);
 setupPasswordToggle(confirmPasswordInput, toggleConfirmBtn, eyeOpenConfirm, eyeClosedConfirm);
 
 
+
+nameInput.addEventListener('input', () => {
+  if (nameInput.value.trim().length < 3) {
+    nameError.textContent = "Name must be at least 3 characters";
+    nameInput.classList.add("invalid");
+
+  } else {
+    nameError.textContent = "";
+    nameInput.classList.remove("invalid");
+  }
+});
+const emailTest = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+emailInput.addEventListener('input', () => {
+  if (!emailTest.test(emailInput.value)) {
+    emailError.textContent = "Email is invalid";
+    emailInput.classList.add("invalid");
+
+  } else {
+    emailError.textContent = "";
+    emailInput.classList.remove("invalid");
+  }
+});
+passwordInput.addEventListener('input', () => {
+  if (passwordInput.value.length < 8) {
+    passwordError.textContent = "Password must be at least 8 characters";
+    passwordInput.classList.add("invalid");
+
+  } else {
+    passwordError.textContent = "";
+    passwordInput.classList.remove("invalid");
+  }
+});
+
+confirmPasswordInput.addEventListener('input', () => {
+  if (confirmPasswordInput.value !== passwordInput.value) {
+    confirmPasswordError.textContent = "Passwords do not match";
+    confirmPasswordInput.classList.add("invalid");
+  } else {
+    confirmPasswordError.textContent = "";
+    confirmPasswordInput.classList.remove("invalid");
+  }
+})
+ageInput.addEventListener('input', () => {
+  const age = Number(ageInput.value);
+  ageInput.classList.add("invalid");
+  if (age > 0 && age < 10) {
+    ageError.textContent = "You must be at least 10 years old";
+
+  } else if (age < 1 || age > 150) {
+    ageError.textContent = "Please enter a valid age";
+  }
+  else {
+    ageError.textContent = "";
+    ageInput.classList.remove("invalid");
+  }
+});
+
+
+
 function validate(data: SignUpFormData): FormErrors {
   const errors: FormErrors = {};
 
   if (!data.name.trim()) errors.name = "Full name is required";
   if (!data.email.trim()) errors.email = "Email is required";
-  else if (!data.email.includes("@")) errors.email = "Invalid email address";
+  else if (!emailTest.test(emailInput.value)) errors.email = "Invalid email address";
 
   if (!data.password) errors.password = "Password is required";
   else if (data.password.length < 8) errors.password = "Password must be at least 8 characters";

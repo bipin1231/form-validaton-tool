@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign Up</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <main>
     <h1>Create Account</h1>
-    
+
     <form id="signupForm" novalidate>
 
       <div class="field">
@@ -29,13 +31,15 @@
       <div class="field password-group">
         <label for="password">Password</label>
         <div class="password-wrapper">
-          <input type="password" id="password">
+          <input type="password" id="password" placeholder="Enter your password">
           <button type="button" class="eye-btn" id="togglePassword">
-            <svg id="eyeOpen" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg id="eyeOpen" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
               <circle cx="12" cy="12" r="3"></circle>
             </svg>
-            <svg id="eyeClosed" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+            <svg id="eyeClosed" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
               <path d="M17.94 17.94L6.06 6.06"></path>
               <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
               <circle cx="12" cy="12" r="3"></circle>
@@ -48,13 +52,15 @@
       <div class="field password-group">
         <label for="confirmPassword">Confirm Password</label>
         <div class="password-wrapper">
-          <input type="password" id="confirmPassword">
+          <input type="password" id="confirmPassword" placeholder="Enter the same password">
           <button type="button" class="eye-btn" id="toggleConfirmPassword">
-            <svg id="eyeOpenConfirm" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg id="eyeOpenConfirm" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
               <circle cx="12" cy="12" r="3"></circle>
             </svg>
-            <svg id="eyeClosedConfirm" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+            <svg id="eyeClosedConfirm" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
               <path d="M17.94 17.94L6.06 6.06"></path>
               <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
               <circle cx="12" cy="12" r="3"></circle>
@@ -66,7 +72,7 @@
 
       <div class="field">
         <label for="age">Age</label>
-        <input type="number" id="age">
+        <input type="number" id="age" placeholder="Enter your age">
         <span class="error" id="ageError"></span>
       </div>
 
@@ -76,4 +82,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>

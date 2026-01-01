@@ -47,6 +47,10 @@ input:focus {
   border-color: #f97316;
 }
 
+input.invalid {
+  border: 2px solid red
+}
+
 
 .password-wrapper {
   position: relative;
