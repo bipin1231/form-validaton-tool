@@ -18,7 +18,7 @@ h1 {
   text-align: center;
   margin-bottom: 30px;
   font-weight: 400;
-  color: #f97316;
+  color: rgb(233, 225, 225);
 }
 
 .field {
@@ -44,7 +44,7 @@ input {
 
 input:focus {
   outline: none;
-  border-color: #f97316;
+  border-color: rgb(91, 91, 192);
 }
 
 input.invalid {
@@ -82,7 +82,7 @@ input.invalid {
 .submit-btn {
   width: 100%;
   padding: 14px;
-  background-color: #f97316;
+  background-color: rgb(85, 74, 74);
   color: #ffffff;
   border: none;
   border-radius: 4px;
@@ -92,5 +92,5 @@ input.invalid {
 }
 
 .submit-btn:hover {
-  background-color: #ea580c;
+  background-color: #686262;
 }
